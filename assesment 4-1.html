@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<script>
+				
+
+		//name
+		function checkName(formobj){
+				var pattern=/[A-Za-z]\s[A-Za-z]/;
+				if( pattern.test(formobj.txtbxName.value )){         
+					alert("Name accepted");   
+				}else{   
+					alert("Please provide a first and last name."); 
+				}
+			}
+
+		//address
+		function checkAddress(formobj){
+				var pattern=/[0-9A-Za-z]\s[0-9A-Za-z]/;
+				if( pattern.test(formobj.txtbxAddress.value )){         
+					alert("Address accepted");   
+				}else{   
+					alert("Please provide a valid address"); 
+				}
+			}
+
+		//postcode		
+		function checkPC(formobj){
+				var pattern=/^[0-9]{4}$/;
+				if( pattern.test(formobj.txtbxPC.value )){         
+					alert("PostCode accepted");   
+				}else{   
+					alert("Please provide a valid postcode (4 digits)."); 
+				}
+			}
+			
+		//phone		
+		function checkPhone(formobj){
+				var pattern=/^[0-9]{9}$/;
+				if( pattern.test(formobj.txtbxPhone.value )){         
+					alert("Phone accepted");   
+				}else{   
+					alert("Please provide a valid phone number (9 digits)."); 
+				}
+			}
+
+		//date
+		function checkDate(form){
+				var date = document.getElementById("txtbxDateBook").required;
+			}
+
+		//time
+		function checkTime(form){
+				var time = document.getElementById("txtbxTimeBook").required;
+			}
+
+		//rooms		
+		function checkRooms(formobj){
+				var pattern=/^[1-3]{1}$/;
+				if( pattern.test(formobj.txtbxRooms.value )){         
+					alert("Rooms accepted");   
+				}else{   
+					alert("Please provide number of rooms (1-3 rooms)."); 
+				}
+			}
+		
+		</script>
+
+	</head>
+
+	<body>
+		<form name="test">
+
+			Enter FullName: <br>
+			<input type="text" name ="txtbxName">
+			<br><br>
+
+			Enter Address: Street Number, Street, Suburb<br>
+			<input type="text" name="txtbxAddress">
+			<br><br>
+
+			Enter PostCode (4 digits): <br>
+			<input type="text" name ="txtbxPC">
+			<br><br>
+
+			Enter Phone Number (9 digits): <br>
+			<input type="text" name="txtbxPhone">
+			<br><br>
+
+			Enter Date of Booking: <br>
+			<input type="date" id ="txtbxDateBook" required>
+ 			<br><br>
+
+ 			Enter Time of Booking: <br>
+			<input type="time" id ="txtbxTimeBook" required>
+  			<br><br>
+
+  			Enter Number of Rooms (1-3): <br>
+			<input type="text" name="txtbxRooms">
+			<br><br>
+
+			<input type="submit" onClick="checkName(document.test); checkAddress(document.test); checkPC(document.test); checkPhone(document.test); checkRooms(document.test)" value="Submit">
+
+		</form>
+				
+	</body>
+</html>
